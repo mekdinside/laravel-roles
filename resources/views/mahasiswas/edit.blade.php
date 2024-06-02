@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+
+@section('title', 'Mahasiswa Edit')
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -54,6 +57,33 @@
                                     name="password_confirmation">
                             </div>
                         </div>
+                        {{-- <div class="mb-3 row">
+                            <label for="roles" class="col-md-4 col-form-label text-md-end text-start">Roles</label>
+                            <div class="col-md-6">
+                                <select class="form-select @error('roles') is-invalid @enderror" multiple aria-label="Roles"
+                                    id="roles" name="roles[]">
+                                    @forelse ($roles as $role)
+                                        @if ($role != 'Super Admin')
+                                            <option value="{{ $role }}"
+                                                {{ $role== $mahasiswa->roles[0]->name ? 'selected' : '' }}>
+                                                {{ $role }}
+                                            </option>
+                                        @else
+                                            @if (Auth::user()->hasRole('Super Admin'))
+                                                <option value="{{ $role }}"
+                                                    {{ $role== $mahasiswa->roles[0]->name ? 'selected' : '' }}>
+                                                    {{ $role }}
+                                                </option>
+                                            @endif
+                                        @endif
+                                    @empty
+                                    @endforelse
+                                </select>
+                                @if ($errors->has('roles'))
+                                    <span class="text-danger">{{ $errors->first('roles') }}</span>
+                                @endif
+                            </div>
+                        </div> --}}
                         <div class="mb-3 row">
                             <label for="jurusan" class="col-md-4 col-form-label text-md-end text-start">Jurusan</label>
                             <div class="col-md-6">

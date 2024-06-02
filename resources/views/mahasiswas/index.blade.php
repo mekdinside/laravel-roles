@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+@section('title', 'Manage Mahasiswa')
+
 @section('content')
     <div class="card">
         <div class="card-header">Mahasiswa List</div>
@@ -47,7 +50,7 @@
                                     @endcan
                                     @can('delete-mahasiswa')
                                         <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Do you want to delete this mahasiswa?');"><i
+                                            onclick="return confirm('Do you want to delete this product?');"><i
                                                 class="bi bi-trash"></i> Delete</button>
                                     @endcan
                                 </form>

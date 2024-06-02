@@ -23,11 +23,18 @@ class PermissionSeeder extends Seeder
             'create-product',
             'edit-product',
             'delete-product',
+
+            //mengikuti tugas spatie
             'create-mahasiswa',
             'edit-mahasiswa',
             'delete-mahasiswa',
             'show-mahasiswa',
 
+            //mengikuti tugas Admin LTE
+            'show-permission',
+            'create-permission',
+            'edit-permission',
+            'delete-permission'
         ];
         //looping and inserting Array's Permissions
         foreach($permissions as $permission){

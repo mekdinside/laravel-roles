@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.backend')
+
+
+@section('title', 'Mahasiswa Create')
+
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,6 +14,17 @@
                     <div class="float-end">
                         <a href="{{ route('mahasiswas.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                     </div>
+                </div>
+                <div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <div class="card-body">
                     <form action="{{ route('mahasiswas.store') }}" method="post">
